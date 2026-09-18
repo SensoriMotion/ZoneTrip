@@ -7,14 +7,14 @@ This repo provides some infrastructure and workflows for generating a Zone Trip-
 
 # Creating Your New Zonetype
 
-1. Create a new zonetype on https://zonetripvr.com (you probably already did this and that is why you are here) to correspond with what you are creating on your computer
+1. Create a new zonetype on https://zonetrip.com (you probably already did this and that is why you are here) to correspond with what you are creating on your computer
 1. After having cloned this repo to your computer, duplicate any folder in wasm_api_v1_webgl2/ (say, fractal_window)
-    1. Optional but recommended: rename the duplicate folder to whatever_new_name (this new name is for your convenience and does not need to match what's on zonetripvr.com)
+    1. Optional but recommended: rename the duplicate folder to whatever_new_name (this new name is for your convenience and does not need to match what's on zonetrip.com)
     1. Optional but recommended: replace all instances of the string or substring 'fractal_window' with 'whatever_new_name' in the whatever_new_name/docker-compose.yml (2x) and whatever_new_name/app/dist/index.html (1x) in the new folder
     1. Delete whatever_new_name/app/dist/wasm/\*.wasm and whatever_new_name/app/dist/wasm/\*.js
 1. Modify lib.rs and and the .glsl shader files in whatever_new_name/app/src/ and (possibly) whatever_new_name/app/Cargo.toml and (probably not) whatever_new_name/app/.cargo/config.toml to implement your vision
-    1. Your `ZoneParams` struct in lib.rs must follow the parameters you have added in your zonetype creation page on zonetripvr.com
-        1. Click "Download the root zone's zone-params.js" on the zonetripvr.com page for the zonetype you are creating and save to whatever_new_name/app/dist/zone-params.js
+    1. Your `ZoneParams` struct in lib.rs must follow the parameters you have added in your zonetype creation page on zonetrip.com
+        1. Click "Download the root zone's zone-params.js" on the zonetrip.com page for the zonetype you are creating and save to whatever_new_name/app/dist/zone-params.js
         1. You can also edit zone-params.js manually
     1. Do not modify anything else
     1. Note you must respect the API for init_zone() and render_zone(), as these are called by Zone Trip with their respective arguments in their respective order
@@ -36,7 +36,7 @@ This repo provides some infrastructure and workflows for generating a Zone Trip-
     1. You can run `wasm-pack build --target web` here to re-compile (this is more convenient than `docker-compose down; docker-compose up`, which also re-compiles)
         1. Compilation info and errors will also appear here
     1. Note you will need to run `docker-compose down; docker-compose build --no-cache; docker-compose up` if you change whatever_new_name/app/Cargo.toml or whatever_new_name/app/.cargo/config.toml
-1. Once compilation succeeds, a .wasm and a .js wasm glue file will appear in whatever_new_name/app/dist/wasm/. Note that once you are satisfied and ready to submit, these exact files will be what you upload on zonetripvr.com
+1. Once compilation succeeds, a .wasm and a .js wasm glue file will appear in whatever_new_name/app/dist/wasm/. Note that once you are satisfied and ready to submit, these exact files will be what you upload on zonetrip.com
 
 # Debugging Your New Zonetype (glsl and javascript)
 
@@ -70,7 +70,7 @@ This repo provides some infrastructure and workflows for generating a Zone Trip-
 
 # Finalizing Your New Zonetype
 
-1. Make sure your finalized root params you download from zonetripvr.com into zone-params.js work with your final code draft
+1. Make sure your finalized root params you download from zonetrip.com into zone-params.js work with your final code draft
 1. Make sure your finalized root params create an interesting experience (i.e. no blank screens or similarly trivial graphical states) that also performs with a good frame rate (you will receive feedback about this and have the opportunity to adjust after submission)
 1. Upload your .wasm file and .js file for your zonetype. Look at example_uploads/ for examples of what you should be uploading
 1. Your uploads will undergo a technical and security review after submission (you will receive feedback about this and have the opportunity to adjust after submission)
